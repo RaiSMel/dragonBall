@@ -1,0 +1,131 @@
+@keyframes power {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--width-value);
+    }
+}
+
+@keyframes appearing-logo {
+    25% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+header {
+    overflow: hidden;
+}
+
+#header-list {
+    background-color: #111;
+    list-style: none;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 30px;
+}
+
+.hl__item img {
+    filter: drop-shadow(0 3px 20px #89740e);
+    position: relative;
+}
+
+.hl__item .hl__item-power {
+    content: '';
+    height: 50px;
+
+    position: absolute;
+    top: 65px;
+
+}
+
+.hl__item.gohan .hl__item-power {
+    animation: 2s power forwards;
+    background: linear-gradient(#4de7ff 10%, #a1f2ff, #4de7ff 90%);
+    filter: drop-shadow(0 3px 30px #2c8896);
+
+    --width-value: calc(50vw - 190px);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.hl__item.veggeta img {
+    transform: rotate(-20deg);
+}
+
+.hl__item.veggeta .hl__item-power {
+    animation: 2s power forwards;
+    background: linear-gradient(#eac716 10%, #ffefa1, #eac716 90%);
+    filter: drop-shadow(0 3px 30px #5d4f08);
+
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+
+    --width-value: calc(50vw - 163px);
+    right: 160px;
+}
+
+.h1__item-explosion {
+    background: radial-gradient(closest-side, #3f87a6, #3f87a6, #eac716);
+    border-radius: 50%;
+    opacity: 0.90;
+
+    position: absolute;
+    left: calc(50% - 90px);
+    z-index: 1;
+
+    width: 170px;
+    height: 130px;
+}
+
+.hl__item.logo {
+    position: absolute;
+    left: calc(50% - 93px);
+}
+
+.hl__item.logo img {
+    height: 100px;
+    z-index: 2;
+}
+
+.appearing-animation {
+    z-index: 2;
+    opacity: 0;
+    animation: 3s appearing-logo forwards;
+}
+
+@media screen and (max-width: 767px) {
+    .hl__item img {
+        height: 100px;
+    }
+
+    .hl__item.gohan .hl__item-power {
+        top: 32px;
+        left: 110px;
+        --width-value: calc(50vw - 110px);
+    }
+
+    .hl__item.veggeta .hl__item-power {
+        top: 32px;
+        right: 85px;
+        --width-value: calc(50vw - 83px);
+    }
+
+    .h1__item-explosion{
+        top: 10px;
+        left: calc( 50% - 50px);
+        width: 100px;
+        height: 100px;
+    }
+
+    .hl__item.logo {
+        top: 0px;
+        left: calc(50% - 80px);
+    }
+}

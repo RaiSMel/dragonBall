@@ -1,0 +1,16 @@
+<main>
+    <section id="quizz">
+        <div class="quizz-ribbon"><h2>{{ title }}</h2></div>
+        <div class="question__container" *ngIf="quizzStarted && !finished">
+            <h3 class="question__title">{{ actualQuestion }}</h3>
+            <div class="questions__container">
+                <button class="question__button" *ngFor="let option of questions" (click)="nextStep(option.id)">{{ option.answer }}</button>
+            </div>
+        </div>
+        <button #buttonStart class="question__button-start" *ngIf="!quizzStarted" (click)="startGame() ;buttonStart.classList.add ('animation-start-button')">Start Quiz</button>
+        <div class="results" *ngIf="finished">
+            <img [src]="character.img" alt="match charater">
+            <h3 class="results__title">Congratulations, <br> You are {{ character.name }}!!</h3>
+        </div>
+    </section>
+</main>
