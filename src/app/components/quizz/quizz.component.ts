@@ -1,14 +1,13 @@
 import { RouterOutlet } from '@angular/router';
 
-import { CommonModule, NgFor } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import quizz from './../../../assets/data/quizz.questions.json';
-import { cp } from 'fs';
 
 @Component({
    selector: 'app-quizz',
    standalone: true,
-   imports: [CommonModule, RouterOutlet, NgFor],
+   imports: [CommonModule, RouterOutlet],
    templateUrl: './quizz.component.html',
    styleUrl: './quizz.component.css'
 })
@@ -22,6 +21,7 @@ export class QuizzComponent implements OnInit {
    answersQuiz: Array<number> = [];
    finished: boolean;
    character: any;
+   @ViewChild ("buttonStart") buttonId!: ElementRef;
    constructor() {
       this.quizzStarted = false;
       this.finished = false;
@@ -44,9 +44,9 @@ export class QuizzComponent implements OnInit {
    }
 
    startGame(): void {
-      setTimeout(() => {
-         this.quizzStarted = true;
-      }, 1000);
+      const buttons = this.buttonId.nativeElement.classList.add('animation-start-button');
+      setInterval(()=> {this.quizzStarted = true}, 1000)
+   
    }
 
    nextStep(option: number): void {
