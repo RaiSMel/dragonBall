@@ -7,7 +7,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/raismel/dragonball?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/raismel/dragonball?style=for-the-badge)
 
-
+![image](https://github.com/RaiSMel/dragonBall/assets/93801960/8402836c-672d-4a76-9e40-015c21dbec8e)
 
 > The Dragon Ball project was intend to be a quizz that choose the characters that best fit your answers, the program has 8 characters and have the capacity of 64 characters.
 
