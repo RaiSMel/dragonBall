@@ -78,7 +78,7 @@ git checkout -b <branch>
 4. Save the changes
 
 ```
-git commit -m"<Type what did you changed>"
+git commit -m"<Type what you changed>"
 ``` 
 
 5. Send to the original branch
